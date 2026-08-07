@@ -1,0 +1,7 @@
+loss:
+  protocol: 0.0
+  trajectory: 1.0
+  modality: 0.5
+  anatomy: 0.3
+  amyloid: 0.1
+  grl: 0.0

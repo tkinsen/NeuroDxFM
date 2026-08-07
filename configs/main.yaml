@@ -1,0 +1,72 @@
+model:
+  input_channels: 5
+  input_shape: [160, 192, 160]
+  patch_size: [4, 4, 4]
+  window_size: [7, 7, 7]
+  depths: [2, 2, 18, 2]
+  heads: [3, 6, 12, 24]
+  embedding_dim: 96
+  representation_dim: 768
+  projection_dim: 256
+  anatomical_targets: 68
+  protocol_classes: 48
+  dropout: 0.1
+  attention_dropout: 0.0
+  stochastic_depth: 0.2
+  modality_dropout: 0.5
+  mask_ratio: 0.25
+  ema_momentum: 0.996
+  temperature: 0.07
+loss:
+  protocol: 1.0
+  trajectory: 1.0
+  modality: 0.5
+  anatomy: 0.3
+  amyloid: 0.1
+  grl: 1.0
+  label_smoothing: 0.0
+optimizer:
+  name: adamw
+  learning_rate: 0.0003
+  downstream_learning_rate: 0.00001
+  weight_decay: 0.05
+  beta1: 0.9
+  beta2: 0.999
+  gradient_clip: 1.0
+schedule:
+  epochs: 200
+  phase_boundary: 100
+  warmup_epochs: 10
+  scheduler: cosine
+  steps_per_epoch: 6250
+  longitudinal_ratio: 3
+runtime:
+  seed: 3407
+  precision: fp16
+  world_size: 8
+  batch_size_per_gpu: 8
+  gradient_accumulation: 4
+  workers_per_gpu: 12
+  device: cuda
+  deterministic: true
+  checkpoint_interval: 5
+  output_directory: runs/main
+data:
+  manifest: data/manifest.csv
+  cache_directory: data/cache
+  input_shape: [160, 192, 160]
+  modality_dropout: 0.5
+  modalities: [t1, flair, fdg_pet, amyloid_pet, csf]
+  white_matter_peak: 110.0
+  rotation_degrees: 15.0
+  scale_low: 0.9
+  scale_high: 1.1
+  translation_mm: 5.0
+  noise_std: 0.02
+  brightness_low: 0.9
+  brightness_high: 1.1
+  gamma_low: 0.7
+  gamma_high: 1.5
+  counterfactual_ssim: 0.85
+  time_gap_low_months: 6
+  time_gap_high_months: 120

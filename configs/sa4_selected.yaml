@@ -1,0 +1,10 @@
+optimizer:
+  learning_rate: 0.0002
+  downstream_learning_rate: 0.0005
+  weight_decay: 0.0001
+runtime:
+  batch_size_per_gpu: 8
+  gradient_accumulation: 4
+schedule:
+  epochs: 200
+  warmup_epochs: 10

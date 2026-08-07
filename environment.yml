@@ -1,0 +1,13 @@
+name: neurodxfm
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.11.11
+  - pytorch=2.1.2
+  - pytorch-cuda=12.1
+  - numpy=1.26.4
+  - pyyaml=6.0.2
+  - pytest=8.3.5
+  - pip=24.3.1

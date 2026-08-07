@@ -1,0 +1,8 @@
+UK Biobank | https://biobank.ndph.ox.ac.uk/ukb/ | controlled access under UK Biobank access procedures
+ADNI | https://adni.loni.usc.edu/ | controlled access under ADNI Data Use Agreement
+AIBL | https://aibl.org.au/ | collaboration application and study terms
+NACC UDS v4 | https://www.naccdata.org/ | researcher request and NACC data-use terms
+PPMI 2.0 | https://www.ppmi-info.org/ | controlled access under PPMI data-use terms
+DIAN Observational Study | https://dian.wustl.edu/ | controlled access by study application
+HCP Lifespan Aging | https://www.humanconnectome.org/study/hcp-lifespan-aging | ConnectomeDB data-use terms
+OpenNeuro | https://openneuro.org/ | dataset-specific open licenses

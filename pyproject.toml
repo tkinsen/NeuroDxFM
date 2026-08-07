@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools==75.8.2", "wheel==0.45.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neurodxfm"
+version = "1.0.0"
+requires-python = ">=3.11,<3.12"
+dependencies = ["numpy==1.26.4", "PyYAML==6.0.2", "torch==2.1.2"]
+
+[project.scripts]
+neurodxfm = "neurodxfm.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "code"}
+
+[tool.setuptools.packages.find]
+where = ["code"]
+
+[tool.pytest.ini_options]
+testpaths = ["code/tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["neurodxfm"]
+mypy_path = "code"
